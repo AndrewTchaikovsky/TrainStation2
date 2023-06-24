@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trainStation id="1">
+    <name>Grand Central Terminal</name>
+    <location>New York, NY</location>
+    <employees>
+        <employee id="1">
+            <firstName>John</firstName>
+            <lastName>Doe</lastName>
+            <position>Conductor</position>
+            <employeeShifts id="1">
+                <startDate>2023-06-24</startDate>
+                <endDate>2023-06-24</endDate>
+            </employeeShifts>
+            <trainMaintenances id="1">
+                <date>2023-07-01</date>
+                <type>Routine Maintenance</type>
+            </trainMaintenances>
+        </employee>
+    </employees>
+    <platforms>
+        <platform id="1">
+            <number>23</number>
+            <platformStatus id="1">
+                <status>Active</status>
+            </platformStatus>
+        </platform>
+    </platforms>
+</trainStation>
