@@ -9,7 +9,7 @@ import javax.xml.bind.Unmarshaller;
 import java.io.File;
 import java.util.List;
 
-public class JaxbParser {
+public class JaxbParser implements Parser {
     public static Logger logger = Logger.getLogger(JaxbParser.class);
 
     public TrainStation parse(String xmlFilePath) {

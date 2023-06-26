@@ -1,9 +1,7 @@
 package com.laba.solvd.db;
 
-import com.laba.solvd.db.parsers.JacksonParser;
-import com.laba.solvd.db.parsers.JaxbParser;
-import com.laba.solvd.db.parsers.StaxParser;
-import com.laba.solvd.db.parsers.XmlValidatorUsingStax;
+import com.laba.solvd.db.model.TrainStation;
+import com.laba.solvd.db.parsers.*;
 import org.apache.log4j.Logger;
 
 import javax.xml.stream.XMLStreamException;
@@ -20,13 +18,13 @@ public class Main {
 
         XmlValidatorUsingStax.validateXML(xmlFilePath, xsdFilePath);
 
-        StaxParser staxParser = new StaxParser();
-        staxParser.parse(xmlFilePath);
+        Parser parser = new StaxParser();
+        TrainStation trainStation = parser.parse(xmlFilePath);
 
-        JaxbParser jaxbParser = new JaxbParser();
-        jaxbParser.parse(xmlFilePath);
+        parser = new JaxbParser();
+        trainStation = parser.parse(xmlFilePath);
 
-        JacksonParser jacksonParser = new JacksonParser();
-        jacksonParser.parse(jsonFilePath);
+        parser = new JacksonParser();
+        trainStation = parser.parse(jsonFilePath);
     }
 }

@@ -8,7 +8,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-public class JacksonParser {
+public class JacksonParser implements Parser {
     public static Logger logger = Logger.getLogger(JacksonParser.class);
 
     public TrainStation parse(String jsonFilePath) {

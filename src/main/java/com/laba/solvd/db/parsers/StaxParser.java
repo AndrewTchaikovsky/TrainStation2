@@ -14,7 +14,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StaxParser {
+public class StaxParser implements Parser {
     public static Logger logger = Logger.getLogger(StaxParser.class);
 
     public TrainStation parse(String xmlFilePath) throws FileNotFoundException, XMLStreamException {
