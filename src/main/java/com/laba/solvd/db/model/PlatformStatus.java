@@ -1,9 +1,16 @@
 package com.laba.solvd.db.model;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import java.util.List;
 
+@XmlAccessorType(XmlAccessType.FIELD)
 public class PlatformStatus {
+    @XmlAttribute
     private Integer id;
+    @XmlElement
     private String status;
 
     public PlatformStatus() {

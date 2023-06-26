@@ -1,10 +1,24 @@
 package com.laba.solvd.db.model;
 
-import java.sql.Date;
+import com.laba.solvd.db.parsers.DateAdapter;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import java.util.Date;
+
+
+@XmlAccessorType(XmlAccessType.FIELD)
 public class EmployeeShift {
+    @XmlAttribute
     private Integer id;
+    @XmlElement
+    @XmlJavaTypeAdapter(DateAdapter.class)
     private Date startDate;
+    @XmlElement
+    @XmlJavaTypeAdapter(DateAdapter.class)
     private Date endDate;
 
     public EmployeeShift() {

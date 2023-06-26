@@ -1,12 +1,22 @@
 package com.laba.solvd.db.model;
 
+import javax.xml.bind.annotation.*;
 import java.util.List;
 
+@XmlRootElement(name = "trainstation")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class TrainStation {
+    @XmlAttribute
     private Integer id;
+    @XmlElement
     private String name;
+    @XmlElement
     private String location;
+    @XmlElementWrapper(name = "employees")
+    @XmlElement(name = "employee")
     private List<Employee> employees;
+    @XmlElementWrapper(name = "platforms")
+    @XmlElement(name = "platform")
     private List<Platform> platforms;
     private List<TrainSchedule> trainSchedules;
 
