@@ -1,20 +1,29 @@
 package com.laba.solvd.db.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
+
 import javax.xml.bind.annotation.*;
 import java.util.List;
 
+@JsonRootName("trainstation")
 @XmlRootElement(name = "trainstation")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class TrainStation {
+    @JsonProperty("id")
     @XmlAttribute
     private Integer id;
+    @JsonProperty("name")
     @XmlElement
     private String name;
+    @JsonProperty("location")
     @XmlElement
     private String location;
+    @JsonProperty("employees")
     @XmlElementWrapper(name = "employees")
     @XmlElement(name = "employee")
     private List<Employee> employees;
+    @JsonProperty("platforms")
     @XmlElementWrapper(name = "platforms")
     @XmlElement(name = "platform")
     private List<Platform> platforms;

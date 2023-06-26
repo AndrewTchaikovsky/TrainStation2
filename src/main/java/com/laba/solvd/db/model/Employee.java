@@ -1,22 +1,30 @@
 package com.laba.solvd.db.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.xml.bind.annotation.*;
 import java.util.List;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Employee {
 
+    @JsonProperty("id")
     @XmlAttribute
     private Integer id;
+    @JsonProperty("firstName")
     @XmlElement
     private String firstName;
+    @JsonProperty("lastName")
     @XmlElement
     private String lastName;
+    @JsonProperty("position")
     @XmlElement
     private String position;
+    @JsonProperty("employeeShifts")
     @XmlElementWrapper(name = "employeeShifts")
     @XmlElement(name = "employeeShift")
     private List<EmployeeShift> employeeShifts;
+    @JsonProperty("trainMaintenances")
     @XmlElementWrapper(name = "trainMaintenances")
     @XmlElement(name = "trainMaintenance")
     private List<TrainMaintenance> trainMaintenances;

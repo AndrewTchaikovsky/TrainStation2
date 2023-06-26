@@ -1,5 +1,7 @@
 package com.laba.solvd.db.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -7,10 +9,13 @@ import javax.xml.bind.annotation.XmlElement;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Platform {
+    @JsonProperty("id")
     @XmlAttribute
     private Integer id;
+    @JsonProperty("number")
     @XmlElement
     private int number;
+    @JsonProperty("platformStatus")
     @XmlElement
     private PlatformStatus platformStatus;
 

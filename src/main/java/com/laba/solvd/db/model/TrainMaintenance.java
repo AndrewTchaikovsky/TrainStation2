@@ -1,5 +1,6 @@
 package com.laba.solvd.db.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.laba.solvd.db.parsers.DateAdapter;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -12,11 +13,14 @@ import java.util.Date;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 public class TrainMaintenance {
+    @JsonProperty("id")
     @XmlAttribute
     private Integer id;
+    @JsonProperty("date")
     @XmlElement
     @XmlJavaTypeAdapter(DateAdapter.class)
     private Date date;
+    @JsonProperty("type")
     @XmlElement
     private String type;
 
